@@ -3,11 +3,22 @@
       <ion-title>
         My Profile
       </ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="settings"></ion-icon>
+        </button>
+      </ion-buttons>
     </ion-navbar>
   </ion-header>
-  
+
   <ion-content padding>
       <ion-input type="file">insert picture here</ion-input>
-      <p>Name</p>
+      <h2><b>Name</b></h2>
+      <h4>{{username}}</h4>
+      <h5>Total Donations: $0.00</h5>
+      <p>Insert pie chart of donation distribution here</p>
+      <br><br><br><br><br>
+      <button ion-button block outline (click) = "navToMyCharities()">My Charities</button>
+      <button ion-button block outline (click) = "navToCharityList()">Add Charities</button>
   </ion-content>
   

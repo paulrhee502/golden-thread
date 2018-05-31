@@ -10,6 +10,8 @@ import { LoginPage } from '../pages/login/login';
 import { Confirmation } from '../pages/confirmation/confirmation';
 import { Profile } from '../pages/profile/profile';
 import { Registration } from '../pages/registration/registration';
+import { CharityListPage } from '../pages/charity-list/charity-list';
+import { DetailsPage } from '../pages/details/details';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { Registration } from '../pages/registration/registration';
     LoginPage,
     Confirmation,
     Profile,
-    Registration
+    Registration,
+    CharityListPage,
+    DetailsPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import { Registration } from '../pages/registration/registration';
     LoginPage,
     Confirmation,
     Profile,
-    Registration
+    Registration,
+    CharityListPage,
+    DetailsPage
   ],
   providers: [
     StatusBar,
