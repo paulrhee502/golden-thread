@@ -12,12 +12,9 @@
   </ion-header>
 
   <ion-content padding>
-      <ion-input type="file">insert picture here</ion-input>
-      <h2><b>Name</b></h2>
-      <h4>{{username}}</h4>
-      <h5>Total Donations: $0.00</h5>
-      <p>Insert pie chart of donation distribution here</p>
-      <br><br><br><br><br>
+      <h1><b>Name</b></h1>
+      <h2>{{username}}</h2>
+      <h3><script src="sum.ts"></script></h3> <!-- How do i input text from ts into here??-->
       <button ion-button block outline (click) = "navToMyCharities()">My Charities</button>
       <button ion-button block outline (click) = "navToCharityList()">Add Charities</button>
   </ion-content>

@@ -12,6 +12,10 @@ import { Profile } from '../pages/profile/profile';
 import { Registration } from '../pages/registration/registration';
 import { CharityListPage } from '../pages/charity-list/charity-list';
 import { DetailsPage } from '../pages/details/details';
+import { ChartsModule } from 'ng2-charts';
+import { PaymentPage } from '../pages/payment/payment';
+import { MyCharitiesProvider } from '../providers/my-charities/my-charities';
+import { MyCharitiesPage } from '../pages/my-charities/my-charities';
 
 @NgModule({
   declarations: [
@@ -22,11 +26,14 @@ import { DetailsPage } from '../pages/details/details';
     Profile,
     Registration,
     CharityListPage,
-    DetailsPage
+    DetailsPage,
+    PaymentPage,
+    MyCharitiesPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,12 +44,15 @@ import { DetailsPage } from '../pages/details/details';
     Profile,
     Registration,
     CharityListPage,
-    DetailsPage
+    DetailsPage,
+    PaymentPage,
+    MyCharitiesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MyCharitiesProvider
   ]
 })
 export class AppModule {}

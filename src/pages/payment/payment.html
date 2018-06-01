@@ -1,0 +1,28 @@
+<!--
+  Generated template for the PaymentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Select your Payment Plan</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item (click) = "donateRenewing(week)">
+      Weekly
+    </ion-item>
+    <ion-item (click) = "donateRenewing(month)">
+      Monthly
+    </ion-item>
+    <ion-item (click) = "donateRenewing(year)">
+      Yearly
+    </ion-item>
+  </ion-list>
+</ion-content>

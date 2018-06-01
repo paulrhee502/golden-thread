@@ -8,7 +8,7 @@
     <ion-searchbar (ionInput)="getCharities($event)" style="padding:0"></ion-searchbar>
     <ion-list *ngFor="let charity of groupedCharities" style="margin:0" detail-push>
       <ion-item-divider style="background-color:rgb(228,228,228)"><b>{{charity.letter}}</b></ion-item-divider>
-      <div *ngFor="let c of charity.charities" (click) = "navToDetails(c)">
+      <div *ngFor="let c of charity.chars" (click) = "navToDetails(c)">
         <ion-item detail-push>
           {{c}}
         </ion-item>

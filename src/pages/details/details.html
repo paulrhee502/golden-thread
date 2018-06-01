@@ -7,21 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-icon name="add-circle" (click) = "addCharity()" style="float:right"></ion-icon>
+    <ion-title>
+      {{charity.name}}
+    </ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click) = "setPayment()">
+            <ion-icon name="add" style="float:right"></ion-icon>
+          </button>
+        </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <img src="http://www.bottlerocketstudios.com/wp-content/uploads/2012/11/file4567.jpg">
-  <h4>Placeholder image</h4>
-  <h2>Details about {{charity}}</h2>
+  <img src={{charity.image}}>
+
+  <p><u>Contact:</u> {{charity.phone}}</p>
+  <p><u>keywords:</u> </p> <!--Again how do i input text using ts???-->
+  <p>{{charity.description}}</p>
   <br>
-  <p>Contact: #</p>
-  <p>keywords: #health #american </p>
-  <p>Brief description about charity, pulled from text file or online?</p>
-  <br>
-  <button ion-button round><b>Donate now</b></button>
+  <div>
+    <button ion-button round large (click) = "donateNow()"><b>Donate now</b></button>
+  </div>
 
 </ion-content>
