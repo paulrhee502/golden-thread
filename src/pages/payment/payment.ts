@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ModalController, ViewController } from 'ionic-angular';
+import { DonatePage } from '../donate/donate';
 
 /**
  * Generated class for the PaymentPage page.
@@ -15,36 +16,15 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 })
 export class PaymentPage {
   public charity;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
-    this.navParams.get("charity");
-    this.charity = "charity";
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, public viewCtrl: ViewController, public modalCtrl: ModalController) {
+    this.charity = this.navParams.get("charity");
   }
 
-  donateRenewing(time:string){
-    let prompt = this.alertCtrl.create({
-      title: 'Donation Subscription',
-      message: "Please specify how much money you would like to donate every " + time,
-      inputs: [
-        {
-          type: 'number',
-          placeholder: '$0.00'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Confirm',
-          handler: data => {
-            console.log(data);
-          }
-        }
-      ]
-    });
-    prompt.present();
+  donatePlan(plan:string){
+    let modal = this.modalCtrl.create(DonatePage, {charity:this.charity,plan:plan});
+    modal.present();
+  }
+  closeModal(){
+    this.viewCtrl.dismiss();
   }
 }

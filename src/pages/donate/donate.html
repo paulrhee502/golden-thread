@@ -1,0 +1,42 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Donate</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="closeModal()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <h1>Please provide your method of payment</h1>
+    <ion-list>
+      <ion-item>
+        <ion-label>Credit Card Number</ion-label>
+        <ion-input type="number" placeholder = "Ex. 12345678901234566" [(ngModel)] = "cardNumber"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Expiration Date</ion-label>
+        <ion-input placeholder = "Ex. 04/20" [(ngModel)] = "expDate"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Security Code</ion-label>
+        <ion-input type="number" placeholder = "Ex. 123" [(ngModel)] = "code"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <b>Amount to Donate</b>
+      </ion-item>
+      <ion-item>
+        <ion-label>$</ion-label>
+        <ion-input type="number" placeholder="Ex. 100.00" [(ngModel)] = "amount"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button full outline (click)="donateNow()">
+      Donate
+    </button>
+  </ion-content>
+  

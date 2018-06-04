@@ -16,6 +16,8 @@ import { ChartsModule } from 'ng2-charts';
 import { PaymentPage } from '../pages/payment/payment';
 import { MyCharitiesProvider } from '../providers/my-charities/my-charities';
 import { MyCharitiesPage } from '../pages/my-charities/my-charities';
+import { DonatePage } from '../pages/donate/donate';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { MyCharitiesPage } from '../pages/my-charities/my-charities';
     CharityListPage,
     DetailsPage,
     PaymentPage,
-    MyCharitiesPage
+    MyCharitiesPage,
+    DonatePage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { MyCharitiesPage } from '../pages/my-charities/my-charities';
     CharityListPage,
     DetailsPage,
     PaymentPage,
-    MyCharitiesPage
+    MyCharitiesPage, 
+    DonatePage
   ],
   providers: [
     StatusBar,

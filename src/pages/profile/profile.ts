@@ -9,20 +9,25 @@ import { MyCharitiesPage } from '../my-charities/my-charities';
   templateUrl: 'profile.html'
 })
 export class Profile {
+    public name;
     public username:string;
+    public email;
+    public sum;
   constructor(public navCtrl: NavController, public navParams:NavParams, public myCharities:MyCharitiesProvider) {
   }
   
   ionViewDidLoad(){
     this.username = this.navParams.get("username");
-
+    this.name = this.navParams.get("name");
+    this.email = this.navParams.get("email");
+    this.sum = this.totalDonation();
   }
-  sum(){
+  totalDonation(){
     let s = 0;
-    this.myCharities.donateArr.forEach((num) => {
+    this.myCharities.totalArr.forEach((num) => {
       s += num;
     })
-    return "Total Donations: $" + s;
+    return s;
   }
   navToCharityList(){
     this.navCtrl.push(CharityListPage);

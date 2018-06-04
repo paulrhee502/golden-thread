@@ -12,9 +12,10 @@
   </ion-header>
 
   <ion-content padding>
-      <h1><b>Name</b></h1>
+      <h1><b>{{name}}</b></h1>
       <h2>{{username}}</h2>
-      <h3><script src="sum.ts"></script></h3> <!-- How do i input text from ts into here??-->
+      <h2>{{email}}</h2>
+      <h3>Total Donations: ${{this.sum}}</h3>
       <button ion-button block outline (click) = "navToMyCharities()">My Charities</button>
       <button ion-button block outline (click) = "navToCharityList()">Add Charities</button>
   </ion-content>

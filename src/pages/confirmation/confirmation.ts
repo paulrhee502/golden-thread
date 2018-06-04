@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Profile } from '../profile/profile';
 
 
@@ -8,13 +8,21 @@ import { Profile } from '../profile/profile';
   templateUrl: 'confirmation.html'
 })
 export class Confirmation {
-
-  constructor(public navCtrl: NavController) {
-
+public username;
+public name;
+public email;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.username = this.navParams.get("username");
+    this.name = this.navParams.get("name");
+    this.email = this.navParams.get("email");
   }
 
   navigateToProfile(){
-      this.navCtrl.push(Profile);
+      this.navCtrl.push(Profile,{
+        username:this.username,
+        name:this.name,
+        email:this.email
+      });
   }
 }
 

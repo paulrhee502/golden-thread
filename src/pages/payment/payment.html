@@ -8,6 +8,11 @@
 
   <ion-navbar>
     <ion-title>Select your Payment Plan</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="closeModal()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -15,14 +20,20 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item (click) = "donateRenewing(week)">
+    <ion-item (click) = "donatePlan('weekly')">
       Weekly
     </ion-item>
-    <ion-item (click) = "donateRenewing(month)">
+    <ion-item (click) = "donatePlan('monthly')">
       Monthly
     </ion-item>
-    <ion-item (click) = "donateRenewing(year)">
+    <ion-item (click) = "donatePlan('yearly')">
       Yearly
     </ion-item>
+    <script>
+      function donatePlan(plan){
+        let modal = this.modalCtrl.create(DonatePage, {charity:this.charity,plan:plan});
+        modal.present();
+      }
+    </script>
   </ion-list>
 </ion-content>

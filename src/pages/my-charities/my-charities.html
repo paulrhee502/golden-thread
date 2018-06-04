@@ -19,18 +19,25 @@
           [labels] = "doughnutChartLabels"
           [chartType]="doughnutChartType"></canvas>
     </div>
-    <ion-card>
-        <img src="http://www.thunder1320.com/wp-content/uploads/2014/09/red-cross-logo.jpg">
-        <ion-card-content>
-          <ion-card-title>
-            Red Cross
+    <ion-grid>
+      <ion-row justify-content:start>
+      <ion-col col-6 *ngFor="let i of indexArray">
+        <ion-card class="card" (click) = "navToDetails(myCharities.charityArr[i])">
+          <img src={{myCharities.charityArr[i].image}}>
+          <ion-icon end icon-only name="star-outline">{{myCharities.numArr[i]}}</ion-icon>
+          <ion-card-content>
+            <ion-card-title>
+              {{myCharities.charityArr[i].name}}
             </ion-card-title>
-          <p>
-            $___ Donated
-          </p>
-          <p>
-            Donated __ times
-          </p>
-        </ion-card-content>
-      </ion-card>
-</ion-content>
+            <p *ngIf="isNA(myCharities.planArr[i])">
+              Plan: {{myCharities.planArr[i]}}
+            </p>
+            <p *ngIf="!isNA(myCharities.planArr[i])">
+              Plan: Donating ${{myCharities.donateArr[i]}} {{myCharities.planArr[i]}}
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      </ion-row>
+    </ion-grid>
+    </ion-content>

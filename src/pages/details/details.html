@@ -22,13 +22,23 @@
 
 <ion-content padding>
   <img src={{charity.image}}>
-
+  <div *ngIf = "indexOf(charity) > -1" class="donationDetails">
+    <p><b>Total money donated:</b> ${{total}}</p>
+    <p><b>Number of donations:</b> {{num}}</p>
+    <p *ngIf = "isPlan()"><b>Plan: </b>${{donate}} {{plan}}</p>
+    <p *ngIf = "!isPlan()"><b>Plan: </b>{{plan}}</p>
+  </div>
+  <div class="heading">
   <p><u>Contact:</u> {{charity.phone}}</p>
-  <p><u>keywords:</u> </p> <!--Again how do i input text using ts???-->
+  <p><u>Keywords:</u></p>
+  <span *ngFor = "let k of charity.keywords"><a>{{k}}</a> </span>
+  </div>
   <p>{{charity.description}}</p>
   <br>
   <div>
     <button ion-button round large (click) = "donateNow()"><b>Donate now</b></button>
   </div>
+  <br>
+  <button *ngIf = "isPlan()" outline full ion-button>Delete Charity</button>
 
 </ion-content>
