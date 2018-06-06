@@ -12,6 +12,9 @@
   </ion-header>
 
   <ion-content padding>
+      <button ion-button (click) = "accessGallery()">Add Picture from Gallery</button>
+      <img src = "base64Image" *ngIf="base64Image"/>
+      <img src = "https://www.gatewaychamber.com/Content/Uploads/ProfilePictures/default-user.png" *ngIf = "!base64Image" />
       <h1><b>{{name}}</b></h1>
       <h2>{{username}}</h2>
       <h2>{{email}}</h2>

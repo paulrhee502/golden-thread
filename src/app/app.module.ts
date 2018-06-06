@@ -17,7 +17,7 @@ import { PaymentPage } from '../pages/payment/payment';
 import { MyCharitiesProvider } from '../providers/my-charities/my-charities';
 import { MyCharitiesPage } from '../pages/my-charities/my-charities';
 import { DonatePage } from '../pages/donate/donate';
-
+import {LottieAnimationViewModule } from 'ng-lottie';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { DonatePage } from '../pages/donate/donate';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    ChartsModule
+    ChartsModule,
+    LottieAnimationViewModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

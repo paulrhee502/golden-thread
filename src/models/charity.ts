@@ -5,7 +5,7 @@ export class Charity{
     public keywords;
     public phone;
     public added;
-    constructor(public n: string, public d: string, public i: string, public k: Array<String>, public p: string, public a: boolean){
+    constructor(public n: string, public d: string, public i: string, public k: Array<String>, public p: string, public a:number){
         this.name = n;
         this.description = d;
         this.image = i;

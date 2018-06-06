@@ -26,7 +26,7 @@ export class CharityListPage {
     "https://pbs.twimg.com/profile_images/685904311512006656/l214_JLZ_400x400.png",
     ["#relief","#safetytraining", "#american", "#donateblood"],
     "+1(202)-303-4498",
-    false
+    0
     );
     this.charities.push(redCross);
     let saveTheChildren = new Charity("Save the Children",
@@ -34,14 +34,14 @@ export class CharityListPage {
     "https://pbs.twimg.com/profile_images/994176381549412352/pDSpjmOX_400x400.jpg",
     ["#children", "#child", "#poverty"],
     "021-671-9424",
-    false)
+    0)
     this.charities.push(saveTheChildren);
     let unitedNationsFoundation = new Charity("United Nations Foundation",
     "When disaster strikes, the world turns to one organization for hope, help, leadership, and coordi­nation: the United Nations. When there is peace to keep between warring factions, the world asks the UN to mobilize peacekeepers, oversee elections, and create stability. In the face of challenges such as climate change, disease or poverty, the United Nations provides the platform for international cooperation. The United Nations is the one international organi­zation with the reach and vision capable of solving global problems. The United Nations Foundation links the UN work with others around the world, mobilizing the energy and expertise of business and non-governmental organizations to help the UN tackle issues including climate change, global health, peace and security, women's empowerment, poverty eradication, energy access, and U.S.-UN relations. The United Nations Foundation is honored to work with you and the United Nations to foster a more peaceful, prosperous and just world.",
     "https://pbs.twimg.com/profile_images/743522714791583744/m_39lcnC_400x400.jpg",
     ["#global", "#disaster", "#relief"],
     "202.887.9040",
-    false)
+    0)
     this.charities.push(unitedNationsFoundation);
     this.groupCharities(this.charities);
   }

@@ -27,7 +27,7 @@ export class MyCharitiesProvider {
     let found: boolean = false;
     for (let index = 0; index < this.charityArr.length; index++) {
       if (this.charityArr[index].name === charity.name) {
-        this.charityArr[index].added = true;
+        this.charityArr[index].added = 1;
         found = true;
         this.totalArr[index] += Number(donation);
         this.numArr[index] += Number(1);

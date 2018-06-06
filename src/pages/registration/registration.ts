@@ -10,7 +10,8 @@ export class Registration {
   public email;
   public password1;
   public password2;
-  public name;
+  public firstname;
+  public lastname;
   public username;
   constructor(public navCtrl: NavController) {
     }
@@ -24,7 +25,8 @@ export class Registration {
           return;
         }
         this.navCtrl.push(Confirmation, {
-          name:this.name,
+          firstname:this.firstname,
+          lastname:this.lastname,
           email:this.email,
           username:this.username
         });

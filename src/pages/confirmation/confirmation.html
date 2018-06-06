@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar>
       <ion-title>
-        App Name
+        Charity App
       </ion-title>
     </ion-navbar>
   </ion-header>
@@ -10,9 +10,10 @@
     <h1>
         <b>Registration successful!</b>
     </h1>
-    <img src="http://clipartmag.com/images/check-mark-transparent-background-18.png">
+    <lottie-animation-view [options]="lottieConfig" [width] = "300" [height] = "300">
+    </lottie-animation-view>
     <h2>
-       Welcome {{name}}!
+       Welcome {{firstname}}!
     </h2>
     <button ion-button (click) = "navigateToProfile()">Go to Profile</button>
   </ion-content>

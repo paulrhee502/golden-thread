@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Profile } from '../profile/profile';
+import { LottieAnimationViewModule } from 'ng-lottie';
+
 
 
 @Component({
@@ -9,12 +11,25 @@ import { Profile } from '../profile/profile';
 })
 export class Confirmation {
 public username;
-public name;
+public firstname;
+public lastname;
 public email;
+public name;
+public lottieConfig:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.username = this.navParams.get("username");
-    this.name = this.navParams.get("name");
+    this.firstname = this.navParams.get("firstname");
+    this.lastname = this.navParams.get("lastname");
     this.email = this.navParams.get("email");
+    this.name = this.firstname + " " + this.lastname;
+    LottieAnimationViewModule.forRoot();
+  
+    this.lottieConfig = {
+      path: '../../assets/simple_tick_2.json',
+      autoplay:true,
+      loopt: false
+    }
+    let errorCallback = (e) => console.error(e);
   }
 
   navigateToProfile(){

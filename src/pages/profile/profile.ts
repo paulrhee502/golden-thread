@@ -3,6 +3,7 @@ import { NavController, NavParams, Navbar } from 'ionic-angular';
 import { CharityListPage } from '../charity-list/charity-list';
 import { MyCharitiesProvider } from '../../providers/my-charities/my-charities';
 import { MyCharitiesPage } from '../my-charities/my-charities';
+import { Camera } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-profile',
@@ -14,7 +15,8 @@ export class Profile {
     public username:string;
     public email;
     public sum;
-  constructor(public navCtrl: NavController, public navParams:NavParams, public myCharities:MyCharitiesProvider) {
+    public base64Image;
+  constructor(public navCtrl: NavController, public navParams:NavParams, public myCharities:MyCharitiesProvider, public camera: Camera) {
   }
   
   ionViewDidLoad(){
@@ -45,5 +47,15 @@ export class Profile {
         this.navCtrl.popToRoot();
       }
     }
+  }
+  accessGallery(){
+    this.camera.getPicture({
+      sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+      destinationType: this.camera.DestinationType.DATA_URL
+    }).then((imageData) => {
+      this.base64Image = 'data:image/jpeg;base64,' +imageData;
+    }, (err) => {
+      console.log(err);
+    });
   }
 }

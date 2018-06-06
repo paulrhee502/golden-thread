@@ -45,12 +45,14 @@ export class DetailsPage {
     if(this.myCharities.charityArr.length == 0){
       return -2;
     }
+    if(charity.added == 0){
+      return -1;
+    }
     for(let i = 0; i < this.myCharities.charityArr.length;i++){
       if(this.myCharities.charityArr[i].name == this.charity.name){
         return i;
       }
     }
-    return -1;
   }
   isPlan(){
     let index = this.indexOf(this.charity);
